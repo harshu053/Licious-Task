@@ -36,18 +36,31 @@ npm run preview
 
 ## Deploy
 
-After `npm run build`, deploy the `dist` folder to Vercel, Netlify, or GitHub Pages. Add your live URL here: `________________`
+After `npm run build`, deploy the `dist` folder to Vercel, Netlify, or GitHub Pages.  
+Live URL: `https://licious-task.vercel.app/`
 
 ## Screenshots
 
-_Add desktop + mobile screenshots before submission._
+- [Dashboard — list view](src/screenshots/Dashboard-ListView.png)
+- [Dashboard — card view](src/screenshots/Dashboard-CardView.png)
+- [Dashboard — dark theme (desktop)](src/screenshots/Dashboard-DarkTheme.png)
+- [Add new task](src/screenshots/AddNewTask.png)
+- [Edit task](src/screenshots/EditTask.png)
+- [Mobile view](src/screenshots/DashboardMobileView.png)
+- [Mobile — dark](src/screenshots/DashboardMobileDark.png)
 
 ## Design notes
 
-- Warm neutral palette with a single accent for actions and focus rings
-- `DM Sans` for UI copy, `Instrument Serif` for headings (loaded from Google Fonts)
-- Overdue pending tasks are highlighted; empty and error states use plain language
+**Look and feel** — Warm, paper-like neutrals (cream / charcoal) with a single **terracotta-style accent** for primary actions and focus rings. Dark mode shifts to deep browns with a softer **coral accent**. The page background uses a **subtle radial wash** tied to the accent so the shell does not feel flat.
 
-## Component layout
+**Typography** — **DM Sans** for UI and body copy; **Instrument Serif** for headings and display titles (loaded from Google Fonts in `index.html`).
 
-UI pieces live under `src/components/<name>/` with a matching `<name>.jsx` and `<name>.module.scss` where it helps (e.g. task board). The task editor modal lives at `taskeditor/TaskEditorModal.jsx` with styles from global classes in `index.css`. Shared tokens stay in `src/index.css` (`:root` / `[data-theme]`).
+**Tokens** — Colors, radii, and shadows are **CSS custom properties** on `:root` and `[data-theme='dark']` in `src/index.css`, so light/dark stays consistent without duplicating hex values in every component.
+
+**Task states** — Completed items read as “done” via **lower opacity + strikethrough**. Pending tasks that are **past due** get a stronger border and an **Overdue** chip. Priority uses **small color-coded pills** (low / medium / high).
+
+**Layout and modals** — Content is capped (~1120px) and centered. Modals use a **blurred dim backdrop**; on narrow viewports the task editor reads more like a **bottom sheet** (rounded top corners). Delete confirmation uses a compact **alert dialog** pattern with focus on the safe action first.
+
+**Motion and accessibility** — Short transitions on hovers and panels; **`prefers-reduced-motion`** in `index.css` collapses animation duration so motion stays optional. Screen-reader-only labels are used where controls are icon-only or visually grouped.
+
+**Code organization** — **Vite + React** (no Angular). The task board uses **Sass CSS modules** per component folder where it helps; the task editor and confirm dialog rely on **shared global classes** in `index.css` for the modal shell and form fields. Filtering, sorting, and **localStorage** load/save live under `src/lib/` — there is **no HTTP API** in this app.
