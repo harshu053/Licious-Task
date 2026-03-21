@@ -1,0 +1,15 @@
+.root {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(180, 83, 9, 0.15);
+  color: #b45309;
+}
+
+:global([data-theme='dark']) .root {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+}
