@@ -51,7 +51,7 @@ Live URL: `https://licious-task.vercel.app/`
 
 # Design Approach
 
-Leveraged AI-powered design tools (e.g., Figma AI, Uizard) for rapid prototyping and initial layout generation. 
+Leveraged AI-powered design tools ( Uizard) for rapid prototyping and initial layout generation. 
 
 ## Design notes
 
