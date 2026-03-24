@@ -49,6 +49,10 @@ Live URL: `https://licious-task.vercel.app/`
 - [Mobile view](src/screenshots/DashboardMobileView.png)
 - [Mobile — dark](src/screenshots/DashboardMobileDark.png)
 
+# Design Approach
+
+Leveraged AI-powered design tools (e.g., Figma AI, Uizard) for rapid prototyping and initial layout generation. 
+
 ## Design notes
 
 **Look and feel** — Warm, paper-like neutrals (cream / charcoal) with a single **terracotta-style accent** for primary actions and focus rings. Dark mode shifts to deep browns with a softer **coral accent**. The page background uses a **subtle radial wash** tied to the accent so the shell does not feel flat.
